@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'register.dart';
 
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Ocultar la etiqueta de depuració
+      debugShowCheckedModeBanner: false, // Ocultar la etiqueta de depuración
+      theme: ThemeData(
+        textTheme: TextTheme(
+          bodyMedium: TextStyle(
+            fontFamily: 'assets/fonts/Inter-Regular.ttf', // Usa el nombre definido en pubspec.yaml
+          ),
+        ),
+      ),
       home: MyHomePage(),
     );
   }
@@ -31,12 +39,11 @@ class MyHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                child: Image.network(
-                  'https://upload.wikimedia.org/wikipedia/commons/f/fb/Univalle_bol_cbb_logo.png',
-                  width: 170,
-                  height: 170,
-                  fit: BoxFit.cover,
-                ),
+                child: Image.asset(
+                  'assets/images/logo1.png',
+                  width: 190,
+                  height: 230,
+                )
               ),
               SizedBox(height: 20.0),
               Text(
@@ -117,7 +124,7 @@ class MyHomePage extends StatelessWidget {
                     print("Iniciar Sesión");
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(182, 142, 8, 35),
+                    primary: Color.fromARGB(255, 153, 51, 102),
                     padding:
                         EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
                     shape: RoundedRectangleBorder(
@@ -179,9 +186,9 @@ class MyHomePage extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Register()),
-                );
+                      context,
+                      MaterialPageRoute(builder: (context) => Register()),
+                    );
                   },
                   child: Text(
                     'No tienes una cuenta? Crear Cuenta',
@@ -189,7 +196,6 @@ class MyHomePage extends StatelessWidget {
                       color: Colors.brown,
                       fontSize: 16.0,
                     ),
-                    
                   ),
                 ),
               ),

@@ -30,11 +30,10 @@ class Register extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                child: Image.network(
-                  'https://upload.wikimedia.org/wikipedia/commons/f/fb/Univalle_bol_cbb_logo.png',
-                  width: 170,
-                  height: 170,
-                  fit: BoxFit.cover,
+                child: Image.asset(
+                  'assets/images/logo1.png',
+                  width: 190,
+                  height: 230,
                 ),
               ),
               SizedBox(height: 20.0),
@@ -126,7 +125,7 @@ class Register extends StatelessWidget {
                     print("Iniciar Sesión");
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(182, 142, 8, 35),
+                    primary: Color.fromARGB(255, 153, 51, 102),
                     padding:
                         EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
                     shape: RoundedRectangleBorder(
